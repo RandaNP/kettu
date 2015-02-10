@@ -79,7 +79,7 @@ kettu.SettingHelpers = {
       $.each($('#info select[name="' + key + '"]').find('option'), function() {
         var $option = $(this);
 
-        if($option.val() === scheduled_times[key]) {
+        if($option.val() === scheduled_times[key].toString()) {
           $option.attr('selected', 'selected');
         }
       });
