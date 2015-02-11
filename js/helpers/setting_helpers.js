@@ -59,13 +59,7 @@ kettu.SettingHelpers = {
       var $select = $(this),
           value = settings[$select.attr('name')];
 
-      $.each($select.find('option'), function() {
-        var $option = $(this);
-
-        if($option.val() === value) {
-          $option.attr('selected', 'selected');
-        }
-      });
+      $select.val(value);
     });
 
     var scheduled_times = {
@@ -76,13 +70,7 @@ kettu.SettingHelpers = {
     };
 
     _.each(scheduled_times, function(value, key) {
-      $.each($('#info select[name="' + key + '"]').find('option'), function() {
-        var $option = $(this);
-
-        if($option.val() === scheduled_times[key].toString()) {
-          $option.attr('selected', 'selected');
-        }
-      });
+      $('#info select[name="' + key + '"]').val(scheduled_times[key]);
     });
   },
 
